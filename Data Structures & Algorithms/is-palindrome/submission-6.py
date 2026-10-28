@@ -1,0 +1,25 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        left = 0
+        right = len(s)-1
+
+        while left < right:
+            if not self.al_num(s[left]):
+                left+=1
+                continue
+            if not self.al_num(s[right]):
+                right-=1
+                continue
+            if s[left].lower() != s[right].lower():
+                return False
+            left+=1
+            right-=1
+        return True
+            
+    
+    def al_num(self,c):
+        return( ord('a')<= ord(c)<= ord('z') or ord('A') <= ord(c)<= ord('Z') or ord('0')<= ord(c)<= ord('9'))
+            
+
+    
+        
